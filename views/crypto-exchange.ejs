@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Exchange - Dashboard</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="/public/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+     <link href="/public/css/all.css" rel="stylesheet" />
+     <!-- MORRIS CHART STYLES-->
+   
+        <!-- CUSTOM STYLES-->
+    <link href="/public/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+     <!-- TABLE STYLES-->
+    <link href="/public/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper"> 
+        <%- include('part/dash-header.ejs'); %>
+        <% if(rate){
+            for(var i=0; i<rate.length; i++){
+                if(rate[i].code == 'USD'){
+                    var usd = rate[i].rate;
+                }
+            }
+        } %>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Crypto Exchange</h2>   
+                       
+                    </div>
+                </div>
+                
+                <div class = "row">    
+                    <div class="col-md-4 col-md-offset-3">
+                        <div class="panel panel-exchange">    
+                            <h4 >CZ Wallet Balance: <i class="fab fa-btc"></i><span id="balance"><%=wallet.total.balance%></span></h4>    
+                            <h4 class="">Current Exchange Rate: <i class="fa fa-dollar-sign"></i><span id="rate"><%=usd%></span></h4>
+                            <a class="btn btn-primary" onclick="exchange()" >Exchange</a>
+
+                            <div id="total" style="display: none;"><h3>Total balance after exchange: <i class="fa fa-dollar-sign"></i><span id="ex-bal"></span> </h3></div>
+                        </div>
+
+                    </div>
+            </div>
+            
+               
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/public/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/public/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/public/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+        
+         <!-- CUSTOM SCRIPTS -->
+    <script src="/public/js/custom.js"></script>
+    <script>
+        document.getElementById("exchange").className = "active-menu";
+     </script>
+     <script>
+         function exchange(){
+             var balance = float(document.getElementById('balance').innerHTML);
+             var rate = float(document.getElementById('rate').innerHTML);
+
+             var total = balance * rate;
+
+             document.getElementById('total').style.display = 'block';
+             document.getElementById('ex-bal').innerHTML = total;
+
+         }
+     </script>
+    
+   
+</body>
+</html>
