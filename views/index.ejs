@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/public/style.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/aos.css">
+</head>
+<body>
+<div class="wrapper">
+<%- include('part/header'); %>
+    <div class="main">
+<section class="first-block">
+  <div id="backVideo"></div>
+  <div hidden class="video-backdrop"></div>
+  <div class="container vcenter-align">
+    <div class="first-block_logo" data-aos="zoom-in">
+     <img src="/public/img/.png" alt="">
+    </div>
+    <div class="first-block_text">
+      <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="200">
+        We plant. We harvest. We share.
+      </div>
+      <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
+        Join the DESTO mobile blockchain financial ecosystem to spread the seeds of economic change and help the world's 2.5&nbsp;billion unbanked.
+      </div>
+    </div>
+    <!-- <div>
+      <div class="first-block_home-text" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">Until DEO sale</div>
+      <div class="first-block_timer" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="500">
+        <div id="timer" class="timer block-flex-center"></div>
+      </div>
+      <div class="first-block_text-start" data-aos="zoom-in">
+        <div>Starts on</div>
+        <div>1st May 2018</div>
+      </div>
+    </div> -->
+  </div>
+  <a href="#" hidden id="openVideo"></a>
+</section>
+<div class="video-container" hidden id="videoPlayer">
+  <button class="video-close" id="closePlayer"></button>
+  <div class="video-player">
+    <div id="player"></div>
+  </div>
+</div>
+
+<section class="who">
+    <div class="container">
+        <div class="who_img">
+            <img src="/public/img/cz-hands.png" alt="">
+        </div>
+        <div class="who_info">
+            <div class="who_name aos-init" data-aos="zoom-in">WHO ARE WE</div>
+            <div class="who_text aos-init" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="500">
+                <strong>DESTO</strong> is a disruptive Tech company for the people. 
+                Inspired and driven to create digital products to serve everyday people, with a special focus on reaching the unbanked and underserve communities.
+                We are social-conscious and people-centric, and work by the mandate of we Plant. We Harvest. we Share. 
+            </div>
+            <br>
+            <div class="who_text aos-init" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="700">
+                Inspired by Carl Sagan�s Pale Blue Dot.
+                <strong>DESTO</strong> envisions a world that is more transparent, bridging the unbanked and under-privilege to improve their quality of lives, whilst serving the banked.
+                All these and more, with a mobile blockchain sustainable ecosystem supported by mobile connectivity.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mission">
+    <div class="container">
+        <div class="mission_container">
+            <div class="mission_half_block">
+                <div class="mission_name aos-init aos-animate" data-aos="zoom-in">Mission</div>
+                <div class="mission_text aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="500">
+                    To lead revolutionary tech disruption to do greater good with the Plant, Harvest, Share mandate
+                </div>
+            </div>
+            <div class="mission_half_block">
+                <div class="mission_name aos-init aos-animate" data-aos="zoom-in">Vision</div>
+                <div class="mission_text aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="700">
+                    To advocate responsible disruptive tech both online and offline as we transition into a big data and cashless-centric society
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="what">
+    <div class="what_container">
+        <div class="what_content mobile">
+            <div class="what_img">
+                <img src="/public/img/MTR-3.png" alt="">
+            </div>
+        </div>
+        <div class="what_content">
+            <div class="what_content_block">
+                <div class="what_content_block_detail">
+                        <div class="what_name aos-init aos-animate" data-aos="zoom-in">WHAT WE DO</div>
+                        <div class="what_text aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="500">
+                            We built and own our blockchain protocol named DEO.
+                            Running the latest algorithm available in the industry now, giving it the unprecedented power of speed and accuracy, 
+                            with proven tested results. We are focused on providing blockchain technology solutions while promoting responsible and ethical 
+                            technology applications. As such the DESTO core team were invited to sit on the advisory board of the National Blockchain Technology Council (Malaysia).
+                        </div>
+                        <div class="what_text aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="700">
+                            DESTO launched her own crypto-asset with the acronym DEO, and will be supported with activities powered by our fintech ecosystem to drive 
+                            Quark Proof of Work (PoW) and Proof of Services to anchor our digital assets� value.
+                            DESTO will become the first tech company in the world, with a complete  blockchain powered Fintech ecosystem.
+                        </div>
+                        <div class="what_text aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="900">
+                            We welcome like-minded companies to collaborate and work with us towards empowering the under-served society.
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="what_content desktop">
+            <div class="what_img">
+                <img src="/public/img/MTR-3.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div class="why_name aos-init aos-animate" data-aos="zoom-in">WHY DEO?</div>
+    <div class="why_content block-flex-top">
+      <div class="why_content_item">
+        <img src="/public/img/cz-hands.png" alt="">
+      </div>
+      <div class="why_content_item">
+        <div class="why_content_item_items block-flex-top aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="500">
+          <div class="point"></div>
+          <div class="text">
+            <strong>Fast:</strong>
+            Instant transactions.
+          </div>
+        </div>
+        <div class="why_content_item_items block-flex-top aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="700">
+          <div class="point"></div>
+          <div class="text">
+            <strong>Safe: </strong>
+            Transactions will be verified by consensus amongst all the members in the network.
+          </div>
+        </div>
+        <div class="why_content_item_items block-flex-top aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="900">
+          <div class="point"></div>
+          <div class="text">
+            <strong>Transparent:</strong>
+            Come as you are, leave as you wish. Enter the DESTO ecosystem with crypto or fiat, exit with crypto or fiat.
+          </div>
+        </div>
+      </div>
+      <div class="why_content_item">
+        <div class="why_content_item_items block-flex-top aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="600">
+          <div class="point"></div>
+          <div class="text">
+            <strong>Affordable:</strong>
+            Low transaction fees.
+          </div>
+        </div>
+        <div class="why_content_item_items block-flex-top aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">
+          <div class="point"></div>
+          <div class="text">
+            <strong>Tangible:</strong>
+            A straightforward debit card will be issued for DESTO PAY users.
+          </div>
+        </div>
+        <div class="why_content_item_items block-flex-top aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="1000">
+          <div class="point"></div>
+          <div class="text">
+            <strong>Legal:</strong>
+            DESTO will invest in obtaining all the necessary Digital Banking and Digital Payment licenses.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('part/footer.ejs'); %>
+
+
+
+
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/public/js/nav_scroll.js"></script>
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/video.js"></script>
+<script src="/public/js/script.js"></script>
+<script src="/public/js/aos.js"></script>
+<script src='js/popup.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+  document.getElementById("menu1").className = "active";
+</script>
+</body>
+</html>

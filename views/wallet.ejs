@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CZ Wallet - Dashboard</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="/public/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+     <link href="/public/css/all.css" rel="stylesheet" />
+     <!-- MORRIS CHART STYLES-->
+    <link href="/public/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="/public/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+   <style type="text/css"> 
+    .btcpay-form { display: inline-flex; align-items: center; justify-content: center; } 
+    .btcpay-form--inline { flex-direction: row; } 
+    .btcpay-form--block { flex-direction: column; } 
+    .btcpay-form--inline .submit { margin-left: 15px; } 
+    .btcpay-form--block select { margin-bottom: 10px; } 
+    .btcpay-form .btcpay-custom-container{ text-align: center; }
+    .btcpay-custom { display: flex; align-items: center; justify-content: center; } 
+    .btcpay-form .plus-minus { cursor:pointer; font-size:25px; line-height: 25px; background: #DFE0E1; height: 30px; width: 45px; border:none; border-radius: 60px; margin: auto 5px; display: inline-flex; justify-content: center; } 
+    .btcpay-form select { -moz-appearance: none; -webkit-appearance: none; appearance: none; color: currentColor; background: transparent; border:1px solid transparent; display: block; padding: 1px; margin-left: auto; margin-right: auto; font-size: 11px; cursor: pointer; } 
+    .btcpay-form select:hover { border-color: #ccc; } 
+    #btcpay-input-price { -moz-appearance: none; -webkit-appearance: none; border: none; box-shadow: none; text-align: center; font-size: 25px; margin: auto; border-radius: 5px; line-height: 35px; background: #fff; } 
+   </style>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <%- include('part/dash-header.ejs'); %>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                 
+             
+                <div class="col-md-6 col-sm-6">
+                  <div class="panel panel-default">
+                      
+                      <div class="panel-body">
+                          <ul class="nav nav-pills">
+                                <li class="active"><a href="#transactions" data-toggle="tab">Transactions</a>
+                                </li>
+                                <li class=""><a href="#addresses" data-toggle="tab">Addresses</a>
+                                </li>
+                            </ul>
+      
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="transactions">
+                                    <h4>All Transactions</h4>
+                                    <div class="col-md-12">
+                                      <!--   Kitchen Sink -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                Transactions
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover" id="transaction">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Amount</th>
+                                                                <th>Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <% if(wallet){
+                                                                for(var i = 0; i<success.length; i++){
+                                                                    const date = new Date(success[i].time);
+                                                            %>
+                                                            <tr>
+                                                                <td><%=date;%></td>
+                                                                <td><%=success[i].price;%></td>
+                                                                <td><%=success[i].status;%></td>
+                                                            </tr>
+                                                            <% }
+                                                            }%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <!-- End  Kitchen Sink -->
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-pane fade" id="addresses">
+                                  <% wallet.addresses.forEach(address =>{%>
+                                    <%=address%>
+                                  <%})%>    
+                                </div>
+                                <div class="tab-pane fade " id="settings-pills">
+                                    <h4>Settings Tab</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-6 ">
+                  <div class="panel ">
+                    <div class="main-temp-back">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="col-xs-6"> <i class="fab fa-btc fa-3x"></i><br> Wallet Balance </div>
+                          <div class="col-xs-6">
+                            <div class="text-temp"> <%=wallet.total.balance%>  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="panel ">
+                    <div class="main-temp-back">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="col-xs-6"> <i class="far fa-money-bill-alt fa-3x"></i><br> Received </div>
+                          <div class="col-xs-6">
+                            <div class="text-temp"> <%=wallet.total.received%> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel ">
+                    <div class="main-temp-back">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="col-xs-6"> <i class="far fa-paper-plane fa-3x"></i><br> Spent </div>
+                          <div class="col-xs-6">
+                            <div class="text-temp"> <%=wallet.total.spent%> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+        </div>
+                  <!-- /. ROW  -->     
+       
+      </div>
+      <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+  </div>
+  <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/public/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/public/js/jquery.metisMenu.js"></script>
+     <!-- MORRIS CHART SCRIPTS -->
+     <script src="/public/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/public/js/morris/morris.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="/public/js/custom.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    
+    <script>
+        document.getElementById("wallet").className = "active-menu";
+        $(document).ready(function() {
+          $('#transaction').DataTable();
+        } );
+     </script>
+</body>
+</html>

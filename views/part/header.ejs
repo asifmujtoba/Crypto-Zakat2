@@ -1,0 +1,33 @@
+<header id="head" class="header home">
+    <div class="container">
+        <div class="flexible">
+            <a class="header-logo" href="/"><img src="/public/img/logo.png"></a>
+            <ul class="header-nav">
+             
+               <li id="menu1"><a class="link" href="/">Home Page</a></li>
+               <li id="menu2"><a class="link" href="/calculate-zakat">Calculate Zakat</a></li>
+               <li id="menu5"><a class="link" href="/about-us">About Us</a></li>
+               <% if(logIn){%>
+                <li id="menu4"><a class="link" href="/dashboard">Dashboard</a></li>
+               <% 
+                }else{
+               %>
+               <li id="menu3"><a class="link" href="/login">Login/Sign-Up</a></li>
+               <% } %>
+            </ul>
+
+            <div class="header-menu">
+                <select id="lang_switcher" class="btn btn-border scroll-page">
+                    <option value="/en/index.html" selected>English</option>
+                    <option value="/ch/index.html">Chinese</option>
+                    <option value="/id/index.html">Indonesian</option>
+                </select>
+                <a class="btn btn-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

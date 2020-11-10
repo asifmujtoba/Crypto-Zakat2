@@ -1,0 +1,74 @@
+<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/public/img/cz-hands.png" width="40px"> CryptoZakat</a> 
+    </div>
+<div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"> Today : <%var month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+var n = month[new Date().getMonth()]; %> <%= n;%> <%= new Date().getDate();%>, <%= new Date().getFullYear();%> &nbsp; 
+    <a href="/logout" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+</nav>   
+   <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+        <!--<li class="text-center">
+            <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+            </li>
+        -->
+            
+            <li>
+                <a href="/dashboard" id="dash-menu"><i class="fas fa-home fa-2x"></i> Dashboard</a>
+            </li>
+            <% if(session.role == 'User'){%>
+            <li>
+                <a  href="/dashboard/my-zakat" id="my-zakat"><i class="fab fa-bitcoin fa-2x"></i>My Zakat</a>
+            </li>
+            <li>
+                <a  href="/dashboard/payzakat" id="pay-zakat"><i class="fas fa-qrcode fa-2x"></i>Pay Zakat</a>
+            </li>
+            <li>
+                <a  href="/dashboard/my-account" id="my-account"><i class="fas fa-user fa-2x"></i>My Account</a>
+            </li>
+            <% } %>
+            <% if(session.role == 'Admin'){%>
+            <li>
+                <a  href="/dashboard/wallet" id="wallet"><i class="fas fa-wallet fa-2x"></i> CZ Wallet</a>
+            </li>
+            <li>
+                <a   href="/dashboard/invoices" id="invoices"><i class="fas fa-receipt fa-2x"></i>Invoices</a>
+            </li>	
+            <li>
+                <a   href="/dashboard/exchange" id="exchange"><i class="fas fa-exchange-alt fa-2x"></i>Crypto Exchange</a>
+            </li>
+            <li>
+                <a   href="/dashboard/users" id="users"><i class="fas fa-users fa-2x"></i>Users</a>
+            </li>	
+            
+            <% } %>		
+            
+          
+        </ul>
+       
+    </div>
+    
+</nav>  
